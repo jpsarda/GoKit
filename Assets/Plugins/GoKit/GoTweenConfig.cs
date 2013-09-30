@@ -311,6 +311,139 @@ public class GoTweenConfig
 	}
 	
 	#endregion
+
+	#region shake generic properties
+
+	/// <summary>
+	/// shake generic vector2 tween
+	/// </summary>
+	public GoTweenConfig shakeVector2Prop( string propertyName, Vector2 endValue, bool isRelative = true, int frameMod = 1 )
+	{
+		var genericProp = new Vector2TweenProperty( propertyName, endValue, isRelative );
+		var prop = new ShakeGenericTweenProperty( genericProp, frameMod );
+		_tweenProperties.Add( prop );
+		
+		return this;
+	}
+	
+	
+	/// <summary>
+	/// shake generic vector3 tween
+	/// </summary>
+	public GoTweenConfig shakeVector3Prop( string propertyName, Vector3 endValue, bool isRelative = true, int frameMod = 1 )
+	{
+		var genericProp = new Vector3TweenProperty( propertyName, endValue, isRelative );
+		var prop = new ShakeGenericTweenProperty( genericProp, frameMod );
+		_tweenProperties.Add( prop );
+		
+		return this;
+	}
+	
+	
+	/// <summary>
+	/// shake generic vector4 tween
+	/// </summary>
+	public GoTweenConfig shakeVector4Prop( string propertyName, Vector4 endValue, bool isRelative = true, int frameMod = 1 )
+	{
+		var genericProp = new Vector4TweenProperty( propertyName, endValue, isRelative );
+		var prop = new ShakeGenericTweenProperty( genericProp, frameMod );
+		_tweenProperties.Add( prop );
+		
+		return this;
+	}
+	
+
+	/// <summary>
+	/// shake generic vector3 path tween
+	/// </summary>
+	public GoTweenConfig shakeVector3PathProp( string propertyName, GoSpline path, bool isRelative = true, int frameMod = 1 )
+	{
+		var genericProp = new Vector3PathTweenProperty( propertyName, path, isRelative );
+		var prop = new ShakeGenericTweenProperty( genericProp, frameMod );
+		_tweenProperties.Add( prop );
+		
+		return this;
+	}
+	
+	
+	/// <summary>
+	/// shake generic vector3.x tween
+	/// </summary>
+	public GoTweenConfig shakeVector3XProp( string propertyName, float endValue, bool isRelative = true, int frameMod = 1 )
+	{
+		var genericProp = new Vector3XTweenProperty( propertyName, endValue, isRelative );
+		var prop = new ShakeGenericTweenProperty( genericProp, frameMod );
+		_tweenProperties.Add( prop );
+		
+		return this;
+	}
+	
+	
+	/// <summary>
+	/// shake generic vector3.y tween
+	/// </summary>
+	public GoTweenConfig shakeVector3YProp( string propertyName, float endValue, bool isRelative = true, int frameMod = 1 )
+	{
+		var genericProp = new Vector3YTweenProperty( propertyName, endValue, isRelative );
+		var prop = new ShakeGenericTweenProperty( genericProp, frameMod );
+		_tweenProperties.Add( prop );
+		
+		return this;
+	}
+	
+	
+	/// <summary>
+	/// shake generic vector3.z tween
+	/// </summary>
+	public GoTweenConfig shakeVector3ZProp( string propertyName, float endValue, bool isRelative = true, int frameMod = 1 )
+	{
+		var genericProp = new Vector3ZTweenProperty( propertyName, endValue, isRelative );
+		var prop = new ShakeGenericTweenProperty( genericProp, frameMod );
+		_tweenProperties.Add( prop );
+		
+		return this;
+	}
+	
+	
+	/// <summary>
+	/// shake generic color tween
+	/// </summary>
+	public GoTweenConfig shakeColorProp( string propertyName, Color endValue, bool isRelative = true, int frameMod = 1 )
+	{
+		var genericProp = new ColorTweenProperty( propertyName, endValue, isRelative );
+		var prop = new ShakeGenericTweenProperty( genericProp, frameMod );
+		_tweenProperties.Add( prop );
+		
+		return this;
+	}
+	
+	
+	/// <summary>
+	/// shake generic integer tween
+	/// </summary>
+	public GoTweenConfig shakeIntProp( string propertyName, int endValue, bool isRelative = true, int frameMod = 1 )
+	{
+		var genericProp = new IntTweenProperty( propertyName, endValue, isRelative );
+		var prop = new ShakeGenericTweenProperty( genericProp, frameMod );
+		_tweenProperties.Add( prop );
+		
+		return this;
+	}
+	
+	
+	/// <summary>
+	/// shake generic float tween
+	/// </summary>
+	public GoTweenConfig shakeFloatProp( string propertyName, float endValue, bool isRelative = true, int frameMod = 1 )
+	{
+		var genericProp = new FloatTweenProperty( propertyName, endValue, isRelative );
+		var prop = new ShakeGenericTweenProperty( genericProp, frameMod );
+		_tweenProperties.Add( prop );
+		
+		return this;
+	}
+
+	#endregion
 	
 	#endregion
 	
