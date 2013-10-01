@@ -25,8 +25,10 @@ public abstract class AbstractDoubleTweenProperty : AbstractTweenProperty
 	
 	public override bool Equals( object obj )
 	{
-		// start with a base check and then compare our material names
-		return _tweenProperty.Equals(((AbstractDoubleTweenProperty)obj)._tweenProperty);
+		if (base.Equals(obj)) {
+			return _tweenProperty.Equals(((AbstractDoubleTweenProperty)obj)._tweenProperty);
+		}
+		return false;
 	}
 	
 	#endregion
