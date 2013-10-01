@@ -312,7 +312,7 @@ public class GoTweenConfig
 	
 	#endregion
 
-	#region shake generic properties
+	#region attenuated shake generic properties
 
 	/// <summary>
 	/// shake generic vector2 tween
@@ -320,7 +320,7 @@ public class GoTweenConfig
 	public GoTweenConfig shakeVector2Prop( string propertyName, Vector2 endValue, bool isRelative = true, int frameMod = 1 )
 	{
 		var genericProp = new Vector2TweenProperty( propertyName, endValue, isRelative );
-		var prop = new ShakeGenericTweenProperty( genericProp, frameMod );
+		var prop = new AttenuatedShakeTweenProperty( genericProp, frameMod );
 		_tweenProperties.Add( prop );
 		
 		return this;
@@ -333,7 +333,7 @@ public class GoTweenConfig
 	public GoTweenConfig shakeVector3Prop( string propertyName, Vector3 endValue, bool isRelative = true, int frameMod = 1 )
 	{
 		var genericProp = new Vector3TweenProperty( propertyName, endValue, isRelative );
-		var prop = new ShakeGenericTweenProperty( genericProp, frameMod );
+		var prop = new AttenuatedShakeTweenProperty( genericProp, frameMod );
 		_tweenProperties.Add( prop );
 		
 		return this;
@@ -346,7 +346,7 @@ public class GoTweenConfig
 	public GoTweenConfig shakeVector4Prop( string propertyName, Vector4 endValue, bool isRelative = true, int frameMod = 1 )
 	{
 		var genericProp = new Vector4TweenProperty( propertyName, endValue, isRelative );
-		var prop = new ShakeGenericTweenProperty( genericProp, frameMod );
+		var prop = new AttenuatedShakeTweenProperty( genericProp, frameMod );
 		_tweenProperties.Add( prop );
 		
 		return this;
@@ -359,7 +359,7 @@ public class GoTweenConfig
 	public GoTweenConfig shakeVector3PathProp( string propertyName, GoSpline path, bool isRelative = true, int frameMod = 1 )
 	{
 		var genericProp = new Vector3PathTweenProperty( propertyName, path, isRelative );
-		var prop = new ShakeGenericTweenProperty( genericProp, frameMod );
+		var prop = new AttenuatedShakeTweenProperty( genericProp, frameMod );
 		_tweenProperties.Add( prop );
 		
 		return this;
@@ -372,7 +372,7 @@ public class GoTweenConfig
 	public GoTweenConfig shakeVector3XProp( string propertyName, float endValue, bool isRelative = true, int frameMod = 1 )
 	{
 		var genericProp = new Vector3XTweenProperty( propertyName, endValue, isRelative );
-		var prop = new ShakeGenericTweenProperty( genericProp, frameMod );
+		var prop = new AttenuatedShakeTweenProperty( genericProp, frameMod );
 		_tweenProperties.Add( prop );
 		
 		return this;
@@ -385,7 +385,7 @@ public class GoTweenConfig
 	public GoTweenConfig shakeVector3YProp( string propertyName, float endValue, bool isRelative = true, int frameMod = 1 )
 	{
 		var genericProp = new Vector3YTweenProperty( propertyName, endValue, isRelative );
-		var prop = new ShakeGenericTweenProperty( genericProp, frameMod );
+		var prop = new AttenuatedShakeTweenProperty( genericProp, frameMod );
 		_tweenProperties.Add( prop );
 		
 		return this;
@@ -398,7 +398,7 @@ public class GoTweenConfig
 	public GoTweenConfig shakeVector3ZProp( string propertyName, float endValue, bool isRelative = true, int frameMod = 1 )
 	{
 		var genericProp = new Vector3ZTweenProperty( propertyName, endValue, isRelative );
-		var prop = new ShakeGenericTweenProperty( genericProp, frameMod );
+		var prop = new AttenuatedShakeTweenProperty( genericProp, frameMod );
 		_tweenProperties.Add( prop );
 		
 		return this;
@@ -411,7 +411,7 @@ public class GoTweenConfig
 	public GoTweenConfig shakeColorProp( string propertyName, Color endValue, bool isRelative = true, int frameMod = 1 )
 	{
 		var genericProp = new ColorTweenProperty( propertyName, endValue, isRelative );
-		var prop = new ShakeGenericTweenProperty( genericProp, frameMod );
+		var prop = new AttenuatedShakeTweenProperty( genericProp, frameMod );
 		_tweenProperties.Add( prop );
 		
 		return this;
@@ -424,7 +424,7 @@ public class GoTweenConfig
 	public GoTweenConfig shakeIntProp( string propertyName, int endValue, bool isRelative = true, int frameMod = 1 )
 	{
 		var genericProp = new IntTweenProperty( propertyName, endValue, isRelative );
-		var prop = new ShakeGenericTweenProperty( genericProp, frameMod );
+		var prop = new AttenuatedShakeTweenProperty( genericProp, frameMod );
 		_tweenProperties.Add( prop );
 		
 		return this;
@@ -437,7 +437,140 @@ public class GoTweenConfig
 	public GoTweenConfig shakeFloatProp( string propertyName, float endValue, bool isRelative = true, int frameMod = 1 )
 	{
 		var genericProp = new FloatTweenProperty( propertyName, endValue, isRelative );
-		var prop = new ShakeGenericTweenProperty( genericProp, frameMod );
+		var prop = new AttenuatedShakeTweenProperty( genericProp, frameMod );
+		_tweenProperties.Add( prop );
+		
+		return this;
+	}
+
+	#endregion
+	
+	#region attenuated oscillate generic properties
+
+	/// <summary>
+	/// oscillate generic vector2 tween
+	/// </summary>
+	public GoTweenConfig oscillateVector2Prop( string propertyName, Vector2 endValue, float period, bool isRelative = true, int frameMod = 1 )
+	{
+		var genericProp = new Vector2TweenProperty( propertyName, endValue, isRelative );
+		var prop = new AttenuatedOscillateTweenProperty( genericProp, period, frameMod );
+		_tweenProperties.Add( prop );
+		
+		return this;
+	}
+	
+	
+	/// <summary>
+	/// oscillate generic vector3 tween
+	/// </summary>
+	public GoTweenConfig oscillateVector3Prop( string propertyName, Vector3 endValue, float period, bool isRelative = true, int frameMod = 1 )
+	{
+		var genericProp = new Vector3TweenProperty( propertyName, endValue, isRelative );
+		var prop = new AttenuatedOscillateTweenProperty( genericProp, period, frameMod );
+		_tweenProperties.Add( prop );
+		
+		return this;
+	}
+	
+	
+	/// <summary>
+	/// oscillate generic vector4 tween
+	/// </summary>
+	public GoTweenConfig oscillateVector4Prop( string propertyName, Vector4 endValue, float period, bool isRelative = true, int frameMod = 1 )
+	{
+		var genericProp = new Vector4TweenProperty( propertyName, endValue, isRelative );
+		var prop = new AttenuatedOscillateTweenProperty( genericProp, period, frameMod );
+		_tweenProperties.Add( prop );
+		
+		return this;
+	}
+	
+
+	/// <summary>
+	/// oscillate generic vector3 path tween
+	/// </summary>
+	public GoTweenConfig oscillateVector3PathProp( string propertyName, GoSpline path, float period, bool isRelative = true, int frameMod = 1 )
+	{
+		var genericProp = new Vector3PathTweenProperty( propertyName, path, isRelative );
+		var prop = new AttenuatedOscillateTweenProperty( genericProp, period, frameMod );
+		_tweenProperties.Add( prop );
+		
+		return this;
+	}
+	
+	
+	/// <summary>
+	/// oscillate generic vector3.x tween
+	/// </summary>
+	public GoTweenConfig oscillateVector3XProp( string propertyName, float endValue, float period, bool isRelative = true, int frameMod = 1 )
+	{
+		var genericProp = new Vector3XTweenProperty( propertyName, endValue, isRelative );
+		var prop = new AttenuatedOscillateTweenProperty( genericProp, period, frameMod );
+		_tweenProperties.Add( prop );
+		
+		return this;
+	}
+	
+	
+	/// <summary>
+	/// oscillate generic vector3.y tween
+	/// </summary>
+	public GoTweenConfig oscillateVector3YProp( string propertyName, float endValue, float period, bool isRelative = true, int frameMod = 1 )
+	{
+		var genericProp = new Vector3YTweenProperty( propertyName, endValue, isRelative );
+		var prop = new AttenuatedOscillateTweenProperty( genericProp, period, frameMod );
+		_tweenProperties.Add( prop );
+		
+		return this;
+	}
+	
+	
+	/// <summary>
+	/// oscillate generic vector3.z tween
+	/// </summary>
+	public GoTweenConfig oscillateVector3ZProp( string propertyName, float endValue, float period, bool isRelative = true, int frameMod = 1 )
+	{
+		var genericProp = new Vector3ZTweenProperty( propertyName, endValue, isRelative );
+		var prop = new AttenuatedOscillateTweenProperty( genericProp, period, frameMod );
+		_tweenProperties.Add( prop );
+		
+		return this;
+	}
+	
+	
+	/// <summary>
+	/// oscillate generic color tween
+	/// </summary>
+	public GoTweenConfig oscillateColorProp( string propertyName, Color endValue, float period, bool isRelative = true, int frameMod = 1 )
+	{
+		var genericProp = new ColorTweenProperty( propertyName, endValue, isRelative );
+		var prop = new AttenuatedOscillateTweenProperty( genericProp, period, frameMod );
+		_tweenProperties.Add( prop );
+		
+		return this;
+	}
+	
+	
+	/// <summary>
+	/// oscillate generic integer tween
+	/// </summary>
+	public GoTweenConfig oscillateIntProp( string propertyName, int endValue, float period, bool isRelative = true, int frameMod = 1 )
+	{
+		var genericProp = new IntTweenProperty( propertyName, endValue, isRelative );
+		var prop = new AttenuatedOscillateTweenProperty( genericProp, period, frameMod );
+		_tweenProperties.Add( prop );
+		
+		return this;
+	}
+	
+	
+	/// <summary>
+	/// oscillate generic float tween
+	/// </summary>
+	public GoTweenConfig oscillateFloatProp( string propertyName, float endValue, float period, bool isRelative = true, int frameMod = 1 )
+	{
+		var genericProp = new FloatTweenProperty( propertyName, endValue, isRelative );
+		var prop = new AttenuatedOscillateTweenProperty( genericProp, period, frameMod );
 		_tweenProperties.Add( prop );
 		
 		return this;
